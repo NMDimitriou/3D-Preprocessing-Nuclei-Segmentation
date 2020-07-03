@@ -1,7 +1,7 @@
 # 3D Preprocessing and Nuclei Segmentation
 Processing and Segmentation pipeline for the detection of Fluorescent Cell/Nuclei
 
-**Citing**: If you use this code, please [cite this article]( ) in your publications. :)   
+**Citing**: If you use this code, please [cite this article]( ) (to be added) in your publications. :)   
 
 **Contact**: For any questions or comments feel free to contact me at this emai address: nikolaos.dimitriou@mail.mcgill.ca
 
