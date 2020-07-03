@@ -24,7 +24,7 @@ the GUI of ImageJ. The steps are:
 * Background subtraction in 3 stages:
    * 1st stage: The Intensity attenuation correction plugin produces two sets of images, the first is the image stack with the corrected intensity, the second 
    is the image stack with the estimated bacgkround. We subtract the background image stack from the intensity-corrected image stack.
-   * 2nd stage: We use rolling ball algorithm (*Subtract background* tool of ImageJ, found in the *Process* section). HiLo Look Up Table is recommended.
+   * 2nd stage: We use rolling ball algorithm (*Process->Subtract background...* tool of ImageJ). HiLo Look Up Table is recommended.
    * 3rd stage: Manual intesity threshold using *Image->Adjust->Brightness/Contrast* tool. HiLo LUT is **required**.
   
 **Nuclei Segmentation**
