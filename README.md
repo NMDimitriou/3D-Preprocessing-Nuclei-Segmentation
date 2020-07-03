@@ -29,8 +29,9 @@ the GUI of ImageJ. The steps are:
   
 **Nuclei Segmentation**
 
-For the segmentation, open the **main_4_0.m** MATLAB file, and specify the directory and name of the image stack. Next run the script.
-Steps included in the *main* file:
+For the segmentation, open the **main_4_0.m** MATLAB file, and specify the directory and name of the input image stack, as well as directory where the 
+final results will be saved. Next run the script.
+Steps included in the *main_4_0.m* file:
 
 * Import image
 * Break image into smaller parts (in the xy-dimensions) for faster processing. The parts of this image will be processed simultaneously using parallel pool.
