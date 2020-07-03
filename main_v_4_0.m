@@ -1,14 +1,14 @@
 %% Main nuclei segmentation pipeline 
-% Author: Nikolaos M. Dimitriou, 
+% Author: Nikolaos M. Dimitriou
 % McGill University, 2020
 clear; clc; close all; delete(gcp('nocreate'));
 
 % import
-day     = 'D9/';
-dir     = [day '8bit_denoised/'];
-fname1  ='BD9-E.tif';
+day	= 'D0';
+fname1	= 'AD0-C.tif';
+dir     = [day '/8bit_denoised/'];
 pathim  = [dir fname1];
-pathres = ['res_coord/' day];
+pathres = ['res_coord/' day '/'];
 info1 = imfinfo(pathim);
 z=length(info1);
 for count=1:length(info1)
@@ -30,7 +30,10 @@ Ns                  = 10             ; % interpolation points for each dimension
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Nuclei segmentation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Create a "local" cluster object
+% Start the parallel pool
 parpool(len_split);
+disp(['Started segmenting ' fname1 ' ...'])
 parfor j=1:len_split
     
     I_part = I_split{j};
@@ -78,11 +81,11 @@ disp('Rescaling ...')
 writematrix(ncc_rsc,[pathres fname1 '.txt']);
 
 %% Visualize
-
+disp('Visualizing ...')
 for i=1:z    
+    
     F = labeloverlay(adapthisteq(I(:,:,i)),LM_rsc(:,:,i),'Colormap','jet','Transparency',0.55);
-    figH(i) = figure('Visible', 'off', ...
-      'Name', sprintf('Figure %d', i), 'NumberTitle', 'off');
+    figH(i) = figure('visible','off','Name',sprintf([fname1 ' Stack %d'], i),'NumberTitle','off');
     ha(1)=subplot(1,2,1); imshow(F);
     ha(2)=subplot(1,2,2); 
     imshow(I(:,:,i));
@@ -90,13 +93,16 @@ for i=1:z
     plot(coord_rsc{i}(:,1),coord_rsc{i}(:,2),'.r','MarkerSize',20);
     hold off;
     pause(0.02);
-    set(get(handle(figH(i)), 'javaframe'), 'GroupName', fname1);
     linkaxes(ha, 'xy');        
 end
-savefig(figH,[pathres fname1 '_stacks.fig'])
+savefig(figH,[pathres fname1 '_stacks.fig']);
 %%
-f3=figure('Visible','off');
+
+f3=figure('visible','off');
 plot3(ncc_rsc(:,1),ncc_rsc(:,2),ncc_rsc(:,3),'.','MarkerSize',12)
+
 savefig(f3,[pathres fname1 '_plot3D.fig']);
 
-log='finished';
+%out=0;
+disp(['Finished ' fname1])
+%

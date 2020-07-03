@@ -2,8 +2,6 @@ function [coord,ncc_final,LM] = find_nc(L2_final,z)
 %% This function finds the centroids of the segmented nuclei
 % input: the binarized result from the last watershed
 % output: the centroids of the nuclei and the label matrix
-% Author: Nikolaos M. Dimitriou, 
-% McGill University, 2020
 CC           = bwconncomp(L2_final       );
 LM           = labelmatrix(CC            );
 % Correct nuclear merge from out of focus planes

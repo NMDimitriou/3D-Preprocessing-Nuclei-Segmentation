@@ -4,8 +4,6 @@ function [LM_rsc,ncc_rsc,coord_rsc] = im_rsc(LM,ncc_final,Ns)
 % input: the label matrix with the segmented cells, the
 % coordinates of the centroids, and the rescale factor
 % output: the rescaled quantities
-% Author: Nikolaos M. Dimitriou, 
-% McGill University, 2020
 
 G          = griddedInterpolant(double(LM));
 [sx,sy,sz] = size(LM);

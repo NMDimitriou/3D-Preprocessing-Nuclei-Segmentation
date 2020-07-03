@@ -3,10 +3,8 @@ function  [L1,L2]= split_nc(bwL)
 % on the binarized result of the previous segmentation
 % and binarizes the result
 % output: L1 the result of watershed, L2 the binarized result.
-% Author: Nikolaos M. Dimitriou, 
-% McGill University, 2020
 
-    ebwL      = bwareaopen(bwL,300);
+    ebwL      = bwareaopen(bwL,500);
     bwLD      = double(ebwL);
     bwD       = -bwdist(~bwLD);
     I1        = imhmin(bwD,1) ;

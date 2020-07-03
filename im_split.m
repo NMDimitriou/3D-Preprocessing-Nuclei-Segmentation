@@ -1,9 +1,4 @@
 function [splitImage]  = im_split(image,splitX,splitY)
-% This function splits image into smaller parts
-% input: image to be splitted, 
-%  splitX, splitY are the number of splits to be performed in each of 
-%  the two planar dimensions
-% output: a cell array the contains the splitted image
 
 [x, y, z]              = size(image);
 
