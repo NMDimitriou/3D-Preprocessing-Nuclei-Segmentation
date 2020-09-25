@@ -1,6 +1,7 @@
 function I_final = im_stitch(I_sg,x_split,y_split)
 %% Reshapes the lineal watershed array to matrix, stiches back the images and
-% reshapes to original size
+% reshapes to original size (optional)
+%Author: N.M. Dimitriou
 
 % Assemble the final image and ...
 I_sg    = reshape(I_sg,[x_split y_split]);
