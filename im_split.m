@@ -1,4 +1,5 @@
 function [splitImage]  = im_split(image,splitX,splitY)
+%% Splits the image into smaller parts for parallel processing
 
 [x, y, z]              = size(image);
 
