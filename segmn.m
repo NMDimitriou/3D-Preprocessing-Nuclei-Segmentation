@@ -3,6 +3,7 @@ function L = segmn(I_cropped)
     % of cropped/interpolated images of nuclei
     % The input is a part of the initial image that is interpolated
     % in order to increase the number of pixels.
+    % Author: N.M. Dimitriou
     
     % 1. Gaussian filter and Stretch histogram
     %I_gauss = imgaussfilt(I_cropped,3);
