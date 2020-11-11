@@ -65,9 +65,7 @@ function processImage(imageFile)
 	//run("Apply LUT", "stack");
 	run("Grays"); //Returns to gray-scale
 
-	saveAs("Tiff", "/home/nikos/Desktop/new_set/D0/8bit_denoised/"+filename);
+	saveAs("Tiff", "/home/nikos/Desktop/survived_samples_series_2/8bit_denoised/"+filename);
 
 	close("*");  // Closes all images 
-	
-	
 }
