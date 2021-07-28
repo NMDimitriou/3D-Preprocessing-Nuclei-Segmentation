@@ -16,8 +16,8 @@ Processing and Segmentation pipeline for the detection of Fluorescent Cell/Nucle
 
 **Image Preprocessing**
 
-The preprocessing steps are summarized in the **preprocessing_main.ijm** macro. You can run this macro in ImageJ or perform the steps of the macro using 
-the GUI of ImageJ. The steps are:
+The preprocessing steps are summarized in the **preprocessing_main.ijm** macro. You can run this macro in ImageJ (*plugins->Macros->Run*) 
+or perform the steps of the macro using the GUI of ImageJ. The steps are:
 
 * Denoising using the PURE LET method of [PureDenoise plugin](http://bigwww.epfl.ch/algorithms/denoise/) of ImageJ.
 * Intensity attenuation correction using the corresponding [plugin](https://imagejdocu.tudor.lu/doku.php?id=plugin:stacks:attenuation_correction:start) of ImageJ.
