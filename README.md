@@ -1,7 +1,7 @@
 # 3D Preprocessing and Nuclei Segmentation
 Processing and Segmentation pipeline for the detection of Fluorescent Cell/Nuclei
 
-**Citing**: If you use this code, please the following article in your publications. :)   
+**Citing**: If you use this code, please cite the following article in your publications. :)   
 
 > Detection and Spatiotemporal analysis of in-vitro 3D migratory Triple-Negative Breast cancer cells <br />
 > Nikolaos M. Dimitriou, Salvador Flores-Torres, Joseph Matthew Kinsella, Georgios D. Mitsis <br />
